@@ -171,8 +171,7 @@ function dk_speakup_emailpetition_shortcode( $attr ) {
 						<label for="dk-speakup-public">Public</label>&nbsp;&nbsp;
 						<input type="radio" name="dk-speakup-privacy" id="dk-speakup-anom" value="private" />
 						<label for="dk-speakup-anom">Anonymous</label>
-					</div>
-				';
+					</div>';
 				$petition_form .= '
 							<div class="dk-speakup-submit-wrap">
 								<div id="dk-speakup-ajaxloader-' . $petition->id . '" class="dk-speakup-ajaxloader" style="visibility: hidden;">&nbsp;</div>
