@@ -61,7 +61,9 @@ class dk_speakup_Signaturelist
 					$signatures_list .= '<tr class="dk-speakup-odd">';
 				}
 				$signatures_list .= '<td class="dk-speakup-signaturelist-count">' . number_format( $current_signature_number, 0, '.', ',' ) . '</td>';
-				$signatures_list .= '<td class="dk-speakup-signaturelist-name">' . stripslashes( $signature->first_name . ' ' . $signature->last_name ) . '</td>';
+				$signatures_list .= '<td class="dk-speakup-signaturelist-name">';
+				$signatures_list .= ($signature->privacy == 'private') ? 'Anonymous' : stripslashes( $signature->first_name . ' ' . $signature->last_name );
+				$signatures_list .= '</td>';
 
 				// if we display both city and state, combine them into one column
 				$city  = ( $display_city )  ? $signature->city : '';
