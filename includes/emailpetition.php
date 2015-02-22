@@ -163,6 +163,16 @@ function dk_speakup_emailpetition_shortcode( $attr ) {
 								<label for="dk-speakup-optin-' . $petition->id . '">' . stripslashes( esc_html( $petition->optin_label ) ) . '</label>
 							</div>';
 				}
+				// Checkbox for anonymous option
+				$petition_form .= '
+					<div class="dk-speakup-optin-wrap">
+						<label>Privacy</label><br />
+						<input type="radio" name="dk-speakup-privacy" id="dk-speakup-public" value="0" />
+						<label for="dk-speakup-public">Public</label>&nbsp;&nbsp;
+						<input type="radio" name="dk-speakup-privacy" id="dk-speakup-anom" value="1" />
+						<label for="dk-speakup-anom">Anonymous</label>
+					</div>
+				';
 				$petition_form .= '
 							<div class="dk-speakup-submit-wrap">
 								<div id="dk-speakup-ajaxloader-' . $petition->id . '" class="dk-speakup-ajaxloader" style="visibility: hidden;">&nbsp;</div>
