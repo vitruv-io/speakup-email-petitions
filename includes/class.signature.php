@@ -23,6 +23,7 @@ class dk_speakup_Signature
 	public $custom_message = '';
 	public $submitted_message = '';
 	public $language = '';
+	public $privacy = '';
 
 	/**
 	 * Retrieves a selection of signature records from the database
@@ -186,10 +187,11 @@ class dk_speakup_Signature
 			'country'           => $this->country,
 			'custom_field'      => $this->custom_field,
 			'custom_message'    => $this->custom_message,
-			'language'          => $this->language
+			'language'          => $this->language,
+			'privacy'           => $this->privacy
 		);
 
-		$format = array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
+		$format = array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
 
 		$wpdb->insert( $db_signatures, $data, $format );
 
@@ -285,6 +287,9 @@ class dk_speakup_Signature
 		if ( isset( $_POST['lang'] ) ) {
 			$this->language = strip_tags( $_POST['lang'] );
 		}
+		if ( isset( $_POST['privacy'] ) ) {
+			$this->privacy = strip_tags( $_POST['privacy'] );
+		}
 	}
 
 	/**
@@ -374,6 +379,7 @@ class dk_speakup_Signature
 		$this->confirmation_code = $signature->confirmation_code;
 		$this->is_confirmed      = $signature->is_confirmed;
 		$this->custom_message    = $signature->custom_message;
+		$this->privacy           = $signature->privacy;
 	}
 
 }

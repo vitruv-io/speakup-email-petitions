@@ -49,6 +49,7 @@ function dk_speakup_install() {
 			`is_confirmed` CHAR(1) BINARY NOT NULL,
 			`custom_message` LONGTEXT CHARACTER SET utf8 NOT NULL,
 			`language` VARCHAR(10) CHARACTER SET utf8 NOT NULL,
+			`privacy` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
 			UNIQUE KEY  (`id`)
 		);";
 
@@ -76,7 +77,8 @@ function dk_speakup_install() {
 		"signaturelist_rows"     => "50",
 		"signaturelist_columns"  => serialize( array( "sig_date" ) ),
 		"widget_theme"           => "default",
-		"csv_signatures"         => "all"
+		"csv_signatures"         => "all",
+		"privacy"                => "public"
 	);
 	// add plugin options to wp_options table
 	add_option( 'dk_speakup_options', $options );
