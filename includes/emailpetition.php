@@ -83,6 +83,21 @@ function dk_speakup_emailpetition_shortcode( $attr ) {
 								<label for="dk-speakup-email-' . $petition->id . '" class="required">' . __( 'Email', 'dk_speakup' ) . '</label>
 								<input name="dk-speakup-email" id="dk-speakup-email-' . $petition->id . '" value="' . $userdata['email'] . '" type="text" />
 							</div>';
+
+				// Add position and organization
+				$petition_form .= '<div class="dk-speakup-full">
+									<label for="dk-speakup-position" class="required">Position</label>
+									<input name="dk-speakup-position" id="dk-speakup-position"type="text" />
+								</div>
+								<div class="dk-speakup-full">
+									<label for="dk-speakup-organization" class="required">Organization</label>
+									<input name="dk-speakup-organization" id="dk-speakup-organization"type="text" />
+								</div>
+								<div class="dk-speakup-full">
+									<label for="dk-speakup-why-support-us">Why Support Us</label>
+									<textarea rows="3" id="dk-speakup-why-support-us" name="dk-speakup-why-support-us"></textarea>
+								</div>';
+
 				if ( $petition->requires_confirmation ) {
 					$petition_form .= '
 							<div class="dk-speakup-full">

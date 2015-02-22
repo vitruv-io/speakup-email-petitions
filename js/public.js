@@ -25,7 +25,10 @@ jQuery( document ).ready( function( $ ) {
 			country        = $( '#dk-speakup-country-' + id ).val(),
 			custom_field   = $( '#dk-speakup-custom-field-' + id ).val(),
 			custom_message = $( '.dk-speakup-message-' + id ).val(),
-			privacy		   = $( 'input[name=dk-speakup-privacy]:checked').val(),
+            position       = $( '#dk-speakup-position').val(),
+            organization   = $( '#dk-speakup-organization').val(),
+			why_support_us = $( '#dk-speakup-why-support-us').val(),
+			privacy        = $( 'input[name=dk-speakup-privacy]:checked').val(),
 			optin          = '',
 			ajaxloader     = $( '#dk-speakup-ajaxloader-' + id );
 
@@ -64,6 +67,14 @@ jQuery( document ).ready( function( $ ) {
 			$( '#dk-speakup-last-name-' + id ).addClass( 'dk-speakup-error' );
 			errors ++;
 		}
+        if ( position === '' ) {
+            $( '#dk-speakup-position' ).addClass( 'dk-speakup-error' );
+            errors ++;
+        }
+        if ( organization === '' ) {
+            $( '#dk-speakup-organization' ).addClass( 'dk-speakup-error' );
+            errors ++;
+        }
 
 		// if no errors found, submit the data via ajax
 		if ( errors === 0 && $( this ).attr( 'rel' ) !== 'disabled' ) {
@@ -86,6 +97,9 @@ jQuery( document ).ready( function( $ ) {
 				custom_message: custom_message,
 				optin:          optin,
 				lang:           lang,
+                position:       position,
+                organization:   organization,
+                why_support_us: why_support_us,
 				privacy:        privacy
 			};
 
