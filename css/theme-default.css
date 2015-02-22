@@ -124,7 +124,6 @@
 .dk-speakup-petition {
   padding-top: .8em;
   /* petition text will be displayed in popup reader, so hide these */
-
 }
 .dk-speakup-petition label {
   color: #808080;
@@ -162,7 +161,8 @@
   display: none !important;
   overflow: auto;
 }
-.dk-speakup-petition input[type=text] {
+.dk-speakup-petition input[type=text],
+.dk-speakup-petition textarea {
   border: 1px solid #b3b3b3;
   border-radius: 3px;
   color: #333;
