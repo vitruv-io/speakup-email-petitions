@@ -23,7 +23,10 @@ class dk_speakup_Signature
 	public $custom_message = '';
 	public $submitted_message = '';
 	public $language = '';
-	public $privacy = '';
+    public $privacy = '';
+    public $position = '';
+    public $organization = '';
+	public $why_support_us = '';
 
 	/**
 	 * Retrieves a selection of signature records from the database
@@ -187,11 +190,14 @@ class dk_speakup_Signature
 			'country'           => $this->country,
 			'custom_field'      => $this->custom_field,
 			'custom_message'    => $this->custom_message,
-			'language'          => $this->language,
+            'language'          => $this->language,
+            'position'          => $this->position,
+            'organization'      => $this->organization,
+			'why_support_us'    => $this->why_support_us,
 			'privacy'           => $this->privacy
 		);
 
-		$format = array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
+		$format = array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
 
 		$wpdb->insert( $db_signatures, $data, $format );
 
@@ -258,6 +264,9 @@ class dk_speakup_Signature
 		$this->first_name   = strip_tags( $_POST['first_name'] );
 		$this->last_name    = strip_tags( $_POST['last_name'] );
 		$this->email        = strip_tags( $_POST['email'] );
+        $this->privacy      = strip_tags( $_POST['privacy'] );
+        $this->position     = strip_tags( $_POST['position'] );
+		$this->organization = strip_tags( $_POST['organization'] );
 		$this->date         = current_time( 'mysql', 0 );
 
 		if ( isset( $_POST['custom_message'] ) ) {
@@ -287,8 +296,8 @@ class dk_speakup_Signature
 		if ( isset( $_POST['lang'] ) ) {
 			$this->language = strip_tags( $_POST['lang'] );
 		}
-		if ( isset( $_POST['privacy'] ) ) {
-			$this->privacy = strip_tags( $_POST['privacy'] );
+		if ( isset( $_POST['why_support_us'] ) ) {
+            $this->why_support_us = strip_tags( $_POST['why_support_us'] );
 		}
 	}
 
@@ -379,7 +388,10 @@ class dk_speakup_Signature
 		$this->confirmation_code = $signature->confirmation_code;
 		$this->is_confirmed      = $signature->is_confirmed;
 		$this->custom_message    = $signature->custom_message;
-		$this->privacy           = $signature->privacy;
+        $this->privacy           = $signature->privacy;
+        $this->position          = $signature->position;
+        $this->organization      = $signature->organization;
+		$this->why_support_us    = $signature->why_support_us;
 	}
 
 }
