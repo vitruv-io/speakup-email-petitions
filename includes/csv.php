@@ -55,6 +55,10 @@ if ( isset( $_REQUEST['csv'] ) && $_REQUEST['csv'] == 'signatures' ) {
 		$email_optin    = __( 'Email Opt-in', 'dk_speakup' );
 		$custom_message = __( 'Custom Message', 'dk_speakup' );
 		$language       = __( 'Language', 'dk_speakup' );
+		$position       = 'Position';
+		$organization   = 'Organization';
+		$why_support_us = 'Why Support Us';
+		$privacy        = 'Privacy';
 
 		// If set, use the custom field label as column header instead of "Custom Field"
 		$counter = 0;
@@ -72,7 +76,7 @@ if ( isset( $_REQUEST['csv'] ) && $_REQUEST['csv'] == 'signatures' ) {
 
 		// construct CSV file header row
 		// must use double quotes and separate with tabs
-		$csv = "$firstname	$lastname	$email	$street	$city	$state	$postcode	$country	$custom_field_label	$date	$confirmed	$petition_title	$petitions_id	$email_optin	$custom_message	$language";
+		$csv = "$firstname	$lastname	$email	$street	$city	$state	$postcode	$country	$custom_field_label	$date	$confirmed	$petition_title	$petitions_id	$email_optin	$custom_message	$language	$position	$organization	$why_support_us	$privacy";
 		$csv .= "\n";
 
 		// construct CSV file data rows
@@ -99,7 +103,7 @@ if ( isset( $_REQUEST['csv'] ) && $_REQUEST['csv'] == 'signatures' ) {
 			else {
 				$optin = '...';
 			}
-			$csv .=  stripslashes( '"' . $signature->first_name . '"	"' . $signature->last_name . '"	"' . $signature->email . '"	"' . $signature->street_address . '"	"' . $signature->city . '"	"' . $signature->state . '"	"' . $signature->postcode . '"	"' . $signature->country . '"	"' . $signature->custom_field . '"	"' . $signature->date . '"	"' . $confirm . '"	"' . $signature->title . '"	"' . $signature->petitions_id . '"	"' . $optin . '"	"' . $signature->custom_message . '"	"' . $signature->language . '"' );
+			$csv .=  stripslashes( '"' . $signature->first_name . '"	"' . $signature->last_name . '"	"' . $signature->email . '"	"' . $signature->street_address . '"	"' . $signature->city . '"	"' . $signature->state . '"	"' . $signature->postcode . '"	"' . $signature->country . '"	"' . $signature->custom_field . '"	"' . $signature->date . '"	"' . $confirm . '"	"' . $signature->title . '"	"' . $signature->petitions_id . '"	"' . $optin . '"	"' . $signature->custom_message . '"	"' . $signature->language . '"	"' . $signature->position . '"	"' . $signature->organization . '"	"' . $signature->why_support_us . '"	"' . $signature->privacy . '"' );
 			$csv .= "\n";
 		}
 
