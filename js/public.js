@@ -25,6 +25,7 @@ jQuery( document ).ready( function( $ ) {
 			country        = $( '#dk-speakup-country-' + id ).val(),
 			custom_field   = $( '#dk-speakup-custom-field-' + id ).val(),
 			custom_message = $( '.dk-speakup-message-' + id ).val(),
+			privacy		   = $( 'input[name=dk-speakup-privacy]:checked').val(),
 			optin          = '',
 			ajaxloader     = $( '#dk-speakup-ajaxloader-' + id );
 
@@ -84,7 +85,8 @@ jQuery( document ).ready( function( $ ) {
 				custom_field:   custom_field,
 				custom_message: custom_message,
 				optin:          optin,
-				lang:           lang
+				lang:           lang,
+				privacy:        privacy
 			};
 
 			// display AJAX loading animation
