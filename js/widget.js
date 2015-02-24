@@ -67,6 +67,10 @@ jQuery( document ).ready( function( $ ) {
 				country        = $( '#dk-speakup-widget-country-' + id ).val(),
 				custom_field   = $( '#dk-speakup-widget-custom-field-' + id ).val(),
 				custom_message = $( 'textarea#dk-speakup-widget-message-' + id ).val(),
+				position       = $( '#dk-speakup-widget-position').val(),
+				organization   = $( '#dk-speakup-widget-organization').val(),
+				why_support_us = $( '#dk-speakup-widget-why-support-us').val(),
+				privacy        = $( 'input[name=dk-speakup-widget-privacy]:checked').val(),
 				optin          = '',
 				ajaxloader     = $( '#dk-speakup-widget-ajaxloader-' + id );
 
@@ -125,7 +129,11 @@ jQuery( document ).ready( function( $ ) {
 					custom_field:   custom_field,
 					custom_message: custom_message,
 					optin:          optin,
-					lang:           lang
+					lang:           lang,
+					position:       position,
+					organization:   organization,
+					why_support_us: why_support_us,
+					privacy:        privacy
 				};
 
 				// display AJAX loading animation

@@ -260,7 +260,8 @@ textarea.dk-speakup-widget-message:focus {
 .dk-speakup-widget-popup-wrap input[type=text]:focus {
   background-color: #ffc;
 }
-.dk-speakup-widget-popup-wrap input[type=text] {
+.dk-speakup-widget-popup-wrap input[type=text],
+.dk-speakup-widget-popup-wrap textarea {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -269,8 +270,10 @@ textarea.dk-speakup-widget-message:focus {
   color: #333;
   font: 15px/1.4em Helvetica, Arial, sans-serif !important;
   margin-bottom: .35em;
-  height: 1.6em !important;
   padding: 0 0 0 .5em;
+}
+.dk-speakup-widget-popup-wrap input[type=text] {
+  height: 1.6em !important;
 }
 .dk-speakup-widget-popup-wrap .dk-speakup-widget-optin-wrap {
   margin-top: .2em;

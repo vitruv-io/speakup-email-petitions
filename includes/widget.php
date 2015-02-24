@@ -221,6 +221,21 @@ class dk_speakup_petition_widget extends WP_Widget {
 								<label for="dk-speakup-widget-email-' . $petition->id . '" class="required">' . __( 'Email', 'dk_speakup' ) . '</label>
 								<input name="dk-speakup-widget-email" id="dk-speakup-widget-email-' . $petition->id . '" value="' . $userdata['email'] . '" type="text" />
 							</div>';
+
+				// Add position and organization
+				$petition_widget .= '<div class="dk-speakup-widget-full">
+									<label for="dk-speakup-widget-position">Position</label>
+									<input name="dk-speakup-widget-position" id="dk-speakup-widget-position"type="text" />
+								</div>
+								<div class="dk-speakup-widget-full">
+									<label for="dk-speakup-organization">Organization</label>
+									<input name="dk-speakup-widget-organization" id="dk-speakup-widget-organization"type="text" />
+								</div>
+								<div class="dk-speakup-widget-full">
+									<label for="dk-speakup-widget-why-support-us">Why Support Us</label>
+									<textarea rows="3" id="dk-speakup-widget-why-support-us" name="dk-speakup-widget-why-support-us"></textarea>
+								</div>';
+
 				if ( $petition->requires_confirmation ) {
 					$petition_widget .= '
 							<div class="dk-speakup-widget-full">
@@ -284,6 +299,15 @@ class dk_speakup_petition_widget extends WP_Widget {
 								<label for="dk-speakup-widget-optin-' . $petition->id . '">' . stripslashes( esc_html( $petition->optin_label ) ) . '</label>
 							</div>';
 				}
+				// Checkbox for anonymous option
+				$petition_widget .= '
+					<div class="dk-speakup-widget-optin-wrap">
+						<label>Privacy</label><br />
+						<input type="radio" name="dk-speakup-widget-privacy" id="dk-speakup-widget-public" value="public" checked />
+						<label for="dk-speakup-widget-public">Public</label>&nbsp;&nbsp;
+						<input type="radio" name="dk-speakup-widget-privacy" id="dk-speakup-widget-anom" value="private" />
+						<label for="dk-speakup-widget-anom">Anonymous</label>
+					</div>';
 				$petition_widget .= '
 							<div class="dk-speakup-widget-submit-wrap">
 								<div id="dk-speakup-widget-ajaxloader-' . $petition->id . '" class="dk-speakup-widget-ajaxloader" style="visibility: hidden;">&nbsp;</div>
