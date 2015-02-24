@@ -265,8 +265,6 @@ class dk_speakup_Signature
 		$this->last_name    = strip_tags( $_POST['last_name'] );
 		$this->email        = strip_tags( $_POST['email'] );
         $this->privacy      = strip_tags( $_POST['privacy'] );
-        $this->position     = strip_tags( $_POST['position'] );
-		$this->organization = strip_tags( $_POST['organization'] );
 		$this->date         = current_time( 'mysql', 0 );
 
 		if ( isset( $_POST['custom_message'] ) ) {
@@ -296,6 +294,12 @@ class dk_speakup_Signature
 		if ( isset( $_POST['lang'] ) ) {
 			$this->language = strip_tags( $_POST['lang'] );
 		}
+		if ( isset( $_POST['position'] ) ) {
+			$this->position = strip_tags( $_POST['position'] );
+		}
+		if ( isset( $_POST['organization'] ) ) {
+			$this->organization = strip_tags( $_POST['organization'] );
+		}		
 		if ( isset( $_POST['why_support_us'] ) ) {
             $this->why_support_us = strip_tags( $_POST['why_support_us'] );
 		}

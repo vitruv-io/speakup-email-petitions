@@ -67,14 +67,6 @@ jQuery( document ).ready( function( $ ) {
 			$( '#dk-speakup-last-name-' + id ).addClass( 'dk-speakup-error' );
 			errors ++;
 		}
-        if ( position === '' ) {
-            $( '#dk-speakup-position' ).addClass( 'dk-speakup-error' );
-            errors ++;
-        }
-        if ( organization === '' ) {
-            $( '#dk-speakup-organization' ).addClass( 'dk-speakup-error' );
-            errors ++;
-        }
 
 		// if no errors found, submit the data via ajax
 		if ( errors === 0 && $( this ).attr( 'rel' ) !== 'disabled' ) {

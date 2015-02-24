@@ -86,11 +86,11 @@ function dk_speakup_emailpetition_shortcode( $attr ) {
 
 				// Add position and organization
 				$petition_form .= '<div class="dk-speakup-full">
-									<label for="dk-speakup-position" class="required">Position</label>
+									<label for="dk-speakup-position">Position</label>
 									<input name="dk-speakup-position" id="dk-speakup-position"type="text" />
 								</div>
 								<div class="dk-speakup-full">
-									<label for="dk-speakup-organization" class="required">Organization</label>
+									<label for="dk-speakup-organization">Organization</label>
 									<input name="dk-speakup-organization" id="dk-speakup-organization"type="text" />
 								</div>
 								<div class="dk-speakup-full">
