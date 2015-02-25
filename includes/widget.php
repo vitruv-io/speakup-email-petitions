@@ -222,6 +222,14 @@ class dk_speakup_petition_widget extends WP_Widget {
 								<input name="dk-speakup-widget-email" id="dk-speakup-widget-email-' . $petition->id . '" value="' . $userdata['email'] . '" type="text" />
 							</div>';
 
+				if ( $petition->requires_confirmation ) {
+					$petition_widget .= '
+							<div class="dk-speakup-widget-full">
+								<label for="dk-speakup-widget-email-confirm-' . $petition->id . '" class="required">' . __( 'Confirm Email', 'dk_speakup' ) . '</label>
+								<input name="dk-speakup-widget-email-confirm" id="dk-speakup-widget-email-confirm-' . $petition->id . '" value="" type="text" />
+							</div>';
+				}
+				
 				// Add position and organization
 				$petition_widget .= '<div class="dk-speakup-widget-full">
 									<label for="dk-speakup-widget-position">Position</label>
@@ -236,13 +244,6 @@ class dk_speakup_petition_widget extends WP_Widget {
 									<textarea rows="3" id="dk-speakup-widget-why-support-us" name="dk-speakup-widget-why-support-us"></textarea>
 								</div>';
 
-				if ( $petition->requires_confirmation ) {
-					$petition_widget .= '
-							<div class="dk-speakup-widget-full">
-								<label for="dk-speakup-widget-email-confirm-' . $petition->id . '" class="required">' . __( 'Confirm Email', 'dk_speakup' ) . '</label>
-								<input name="dk-speakup-widget-email-confirm" id="dk-speakup-widget-email-confirm-' . $petition->id . '" value="" type="text" />
-							</div>';
-				}
 				if ( in_array( 'street', $petition->address_fields ) ) {
 					$petition_widget .= '
 							<div class="dk-speakup-widget-full">

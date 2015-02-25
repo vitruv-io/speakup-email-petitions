@@ -84,6 +84,14 @@ function dk_speakup_emailpetition_shortcode( $attr ) {
 								<input name="dk-speakup-email" id="dk-speakup-email-' . $petition->id . '" value="' . $userdata['email'] . '" type="text" />
 							</div>';
 
+				if ( $petition->requires_confirmation ) {
+					$petition_form .= '
+							<div class="dk-speakup-full">
+								<label for="dk-speakup-email-confirm-' . $petition->id . '" class="required">' . __( 'Confirm Email', 'dk_speakup' ) . '</label>
+								<input name="dk-speakup-email-confirm" id="dk-speakup-email-confirm-' . $petition->id . '" value="" type="text" />
+							</div>';
+				}
+
 				// Add position and organization
 				$petition_form .= '<div class="dk-speakup-full">
 									<label for="dk-speakup-position">Position</label>
@@ -97,14 +105,7 @@ function dk_speakup_emailpetition_shortcode( $attr ) {
 									<label for="dk-speakup-why-support-us">Why Support Us</label>
 									<textarea rows="3" id="dk-speakup-why-support-us" name="dk-speakup-why-support-us"></textarea>
 								</div>';
-
-				if ( $petition->requires_confirmation ) {
-					$petition_form .= '
-							<div class="dk-speakup-full">
-								<label for="dk-speakup-email-confirm-' . $petition->id . '" class="required">' . __( 'Confirm Email', 'dk_speakup' ) . '</label>
-								<input name="dk-speakup-email-confirm" id="dk-speakup-email-confirm-' . $petition->id . '" value="" type="text" />
-							</div>';
-				}
+								
 				if ( in_array( 'street', $petition->address_fields ) ) {
 					$petition_form .= '
 							<div class="dk-speakup-full">
