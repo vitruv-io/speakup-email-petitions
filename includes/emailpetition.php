@@ -261,7 +261,7 @@ function dk_speakup_public_css_js( $posts ) {
 	if ( empty( $posts ) ) return $posts;
 
 	$options = get_option( 'dk_speakup_options' );
-	$shortcode_found = false;
+	$shortcode_found = true;
 
 	foreach ( $posts as $post ) {
 		if ( strstr( $post->post_content, '[emailpetition' ) ) {
